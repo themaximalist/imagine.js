@@ -9,15 +9,10 @@ await Imagine("a red rose"); // Buffer(...)
 ```
 
 **Features**
-
 - Easy to use
-
 - Works with local Stable Diffusion models
-
 - Works with any remote models
-
 - Same interface for all services (`a1111`, `replicate`, `stability`)
-
 - MIT license
 
 
