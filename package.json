@@ -1,0 +1,25 @@
+{
+    "name": "@themaximalist/imagine.js",
+    "version": "0.0.1",
+    "description": "Simple AI Image Generation",
+    "main": "src/index.js",
+    "type": "module",
+    "scripts": {
+        "test": "mocha"
+    },
+    "keywords": [
+        "ai",
+        "stable-diffusion",
+        "imagine",
+        "images"
+    ],
+    "author": "The Maximalist",
+    "license": "MIT",
+    "devDependencies": {
+        "mocha": "^10.2.0"
+    },
+    "dependencies": {
+        "node-fetch": "^3.3.2",
+        "replicate": "^0.25.2"
+    }
+}
