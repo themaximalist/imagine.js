@@ -1,8 +1,13 @@
 {
     "name": "@themaximalist/imagine.js",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Simple AI Image Generation",
     "main": "src/index.js",
+    "homepage": "https://imaginejs.themaximalist.com",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/themaximal1st/imaginejs.js.git"
+    },
     "type": "module",
     "scripts": {
         "test": "mocha"
