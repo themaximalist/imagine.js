@@ -62,6 +62,7 @@ await Imagine("a red rose", { service: "stability"} );
 `Imagine.js` is currently used in the following projects:
 
 -   [Infinity Arcade](https://infinityarcade.com)
+-   [ImagesBot](https://imagesbot.com)
 -   [AI.js](https://aijs.themaximalist.com)
 
 ### Author
