@@ -116,6 +116,8 @@ Node.js</h1>
 <li><a href="#image-generators" id="toc-image-generators">Image
 Generators</a></li>
 <li><a href="#llm-prompt" id="toc-llm-prompt">LLM Prompt</a></li>
+<li><a href="#api" id="toc-api">API</a></li>
+<li><a href="#debug" id="toc-debug">Debug</a></li>
 <li><a href="#projects" id="toc-projects">Projects</a></li>
 <li><a href="#license" id="toc-license">License</a></li>
 <li><a href="#author" id="toc-author">Author</a></li>
@@ -137,6 +139,12 @@ and remote models like <a href="https://replicate.com/">Replicate</a>
 and <a href="https://stability.ai/">Stability</a>.</p>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">await</span> <span class="fu">Imagine</span>(<span class="st">&quot;a red rose&quot;</span>)<span class="op">;</span> <span class="co">// Buffer(...)</span></span></code></pre></div>
+<div class="images">
+<p><img src="image1.png" alt="Example of Imagine.js image generation" />
+<img src="image2.png" alt="Example of Imagine.js image generation" />
+<img src="image3.png" alt="Example of Imagine.js image generation" />
+<img src="image4.png" alt="Example of Imagine.js image generation" /></p>
+</div>
 <p><strong>Features</strong></p>
 <ul>
 <li>Easy to use</li>
@@ -175,8 +183,8 @@ class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb5-
 <p>Making it easy to switch providers ensures you can try lots of
 combinations and prevent getting locked in!</p>
 <h2 id="llm-prompt">LLM Prompt</h2>
-<p>Running your prompt through an LLM first can produce incredible
-results. <code>Imagine.js</code> is easy to combine with <a
+<p>Running your prompt through an LLM first can produce great results.
+<code>Imagine.js</code> is easy to combine with <a
 href="https://llmjs.themaximalist.com">LLM.js</a> to quickly remix and
 increase the quality of your prompts.</p>
 <div class="sourceCode" id="cb6"><pre
@@ -197,14 +205,59 @@ class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb6-
 <p>You can run this over and over and iterate with the LLM and Image
 Model towards a better and better result. Check out <a
 href="https://imagesbot.com">Images Bot</a> for a real-world example of
-this (it’s open-source).</p>
+this (it’s open source).</p>
+<h2 id="api">API</h2>
+<p>The <code>Imagine.js</code> API is a simple function you call with
+your text prompt, and an optional config object.</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">await</span> <span class="fu">Imagine</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    input<span class="op">,</span> <span class="co">// Text input for image generation</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">service</span><span class="op">:</span> <span class="st">&quot;stability&quot;</span><span class="op">,</span> <span class="co">// Embedding service</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="dt">model</span><span class="op">:</span> <span class="st">&quot;stable-diffusion-xl-beta-v2-2-2&quot;</span><span class="op">,</span> <span class="co">// Embedding model</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">seed</span><span class="op">:</span> <span class="dv">100</span><span class="op">,</span> <span class="co">// Stabilize image generation</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code></pre></div>
+<p><strong>Options</strong></p>
+<ul>
+<li><strong><code>service</code></strong> <code>&lt;string&gt;</code>:
+Image generation service provider. Default is <code>a111</code>, a local
+provider. Other providers are <code>stability</code> and
+<code>replicate</code>.</li>
+<li><strong><code>model</code></strong> <code>&lt;string&gt;</code>:
+Image generation model. Default is <code>a111</code> with
+<code>Stable Diffusion</code></li>
+<li><strong><code>seed</code></strong> <code>&lt;int&gt;</code>:
+Stabilize image generation making it more deterministic. No
+default.</li>
+</ul>
+<p><strong>Response</strong></p>
+<p><code>Imagine.js</code> returns an image <code>Buffer</code>.
+Typically you save this as a <code>png</code> file, which let’s you view
+it.</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> buffer <span class="op">=</span> <span class="cf">await</span> <span class="fu">Imagine</span>(<span class="st">&quot;a red rose&quot;</span>)<span class="op">;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>fs<span class="op">.</span><span class="fu">writeFileSync</span>(<span class="st">&quot;rose.png&quot;</span><span class="op">,</span> buffer)<span class="op">;</span></span></code></pre></div>
+<p>The <code>Imagine.js</code> API ensures you have a simple way to use
+different image generators in the same interface.</p>
+<h2 id="debug">Debug</h2>
+<p><code>Imagine.js</code> uses the <code>debug</code> npm module with
+the <code>imagine.js</code> namespace.</p>
+<p>View debug logs by setting the <code>DEBUG</code> environment
+variable.</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> DEBUG=imagine.js<span class="pp">*</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> node <span class="ex">src/imagine_images.js</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># debug logs</span></span></code></pre></div>
 <h2 id="projects">Projects</h2>
 <p><code>Imagine.js</code> is currently used in the following
 projects:</p>
 <ul>
-<li><a href="https://infinityarcade.com">Infinity Arcade</a></li>
-<li><a href="https://imagesbot.com">ImagesBot</a></li>
-<li><a href="https://aijs.themaximalist.com">AI.js</a></li>
+<li><a href="https://aijs.themaximalist.com">AI.js</a> — simple AI
+library</li>
+<li><a href="https://infinityarcade.com">Infinity Arcade</a> — play any
+text adventure game</li>
+<li><a href="https://imagesbot.com">Images Bot</a> — image explorer</li>
 </ul>
 <h2 id="license">License</h2>
 <p>MIT</p>

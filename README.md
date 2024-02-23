@@ -16,6 +16,14 @@
 await Imagine("a red rose"); // Buffer(...)
 ```
 
+
+<div class="images">
+<img src="public/image1.png" alt="Example of Imagine.js image generation" />
+<img src="public/image2.png" alt="Example of Imagine.js image generation" />
+<img src="public/image3.png" alt="Example of Imagine.js image generation" />
+<img src="public/image4.png" alt="Example of Imagine.js image generation" />
+</div>
+
 **Features**
 
 - Easy to use
@@ -68,7 +76,7 @@ Making it easy to switch providers ensures you can try lots of combinations and 
 
 ## LLM Prompt
 
-Running your prompt through an LLM first can produce incredible results. `Imagine.js` is easy to combine with [LLM.js](https://llmjs.themaximalist.com) to quickly remix and increase the quality of your prompts.
+Running your prompt through an LLM first can produce great results. `Imagine.js` is easy to combine with [LLM.js](https://llmjs.themaximalist.com) to quickly remix and increase the quality of your prompts.
 
 ```javascript
 const LLM = require("@themaximalist/llm.js");
@@ -87,15 +95,62 @@ const buffer = await Imagine(prompt);
 fs.writeFileSync("rose.png", buffer);
 ```
 
-You can run this over and over and iterate with the LLM and Image Model towards a better and better result. Check out [Images Bot](https://imagesbot.com) for a real-world example of this (it's open-source).
+You can run this over and over and iterate with the LLM and Image Model towards a better and better result. Check out [Images Bot](https://imagesbot.com) for a real-world example of this (it's open source).
+
+## API
+
+The `Imagine.js` API is a simple function you call with your text prompt, and an optional config object.
+
+
+```javascript
+await Imagine(
+    input, // Text input for image generation
+    {
+        service: "stability", // Embedding service
+        model: "stable-diffusion-xl-beta-v2-2-2", // Embedding model
+        seed: 100, // Stabilize image generation
+    }
+);
+```
+
+**Options**
+
+* **`service`** `<string>`: Image generation service provider. Default is `a111`, a local provider. Other providers are `stability` and `replicate`.
+* **`model`** `<string>`: Image generation model. Default is `a111` with `Stable Diffusion`
+* **`seed`** `<int>`: Stabilize image generation making it more deterministic. No default.
+
+**Response**
+
+`Imagine.js` returns an image `Buffer`. Typically you save this as a `png` file, which let's you view it.
+
+```javascript
+const buffer = await Imagine("a red rose");
+fs.writeFileSync("rose.png", buffer);
+```
+
+The `Imagine.js` API ensures you have a simple way to use different image generators in the same interface.
+
+## Debug
+
+`Imagine.js` uses the `debug` npm module with the `imagine.js` namespace.
+
+View debug logs by setting the `DEBUG` environment variable.
+
+```bash
+> DEBUG=imagine.js*
+> node src/imagine_images.js
+# debug logs
+```
+
+
 
 ## Projects
 
 `Imagine.js` is currently used in the following projects:
 
--   [Infinity Arcade](https://infinityarcade.com)
--   [ImagesBot](https://imagesbot.com)
--   [AI.js](https://aijs.themaximalist.com)
+-   [AI.js](https://aijs.themaximalist.com) — simple AI library
+-   [Infinity Arcade](https://infinityarcade.com) — play any text adventure game
+-   [Images Bot](https://imagesbot.com) — image explorer
 
 ## License
 

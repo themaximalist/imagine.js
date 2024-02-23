@@ -18,6 +18,10 @@ h1 {
     display: none;
 }
 
+.images img {
+    width: 24% !important;
+}
+
 #content > h2:first-of-type {
     visibility: hidden;
     position: absolute;
@@ -173,10 +177,6 @@ figure img {
     max-width: 800px;
 }
 
-.images img {
-    width: 49%;
-}
-
 #TOC {
     position: absolute;
     height: 100%;
@@ -253,5 +253,9 @@ figure img {
 @media (width <= 900px) {
     #TOC {
         display: none;
+    }
+
+    .images img {
+        width: 49% !important;
     }
 }
