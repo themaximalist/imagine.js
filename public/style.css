@@ -19,7 +19,7 @@ h1 {
 }
 
 .images img {
-    width: 24% !important;
+    width: 100%;
 }
 
 #content > h2:first-of-type {
@@ -253,9 +253,5 @@ figure img {
 @media (width <= 900px) {
     #TOC {
         display: none;
-    }
-
-    .images img {
-        width: 49% !important;
     }
 }

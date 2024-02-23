@@ -17,9 +17,14 @@ await Imagine("a red rose"); // Buffer(...)
 ```
 
 
-<div class="images" style="float: left">
-<img src="public/image1.png" alt="Example of Imagine.js image generation" /> <img src="public/image2.png" alt="Example of Imagine.js image generation" /> <img src="public/image3.png" alt="Example of Imagine.js image generation" /> <img src="public/image4.png" alt="Example of Imagine.js image generation" />
-</div>
+<table class="images">
+<tr>
+<td><img src="public/image1.png" alt="Example of Imagine.js image generation" /></td>
+<td><img src="public/image2.png" alt="Example of Imagine.js image generation" /></td>
+<td><img src="public/image3.png" alt="Example of Imagine.js image generation" /></td>
+<td><img src="public/image4.png" alt="Example of Imagine.js image generation" /></td>
+</tr>
+</table>
 
 **Features**
 
