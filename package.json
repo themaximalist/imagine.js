@@ -1,6 +1,6 @@
 {
     "name": "@themaximalist/imagine.js",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Simple AI Image Generation",
     "main": "src/index.js",
     "homepage": "https://imaginejs.themaximalist.com",
