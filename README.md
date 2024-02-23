@@ -1,6 +1,6 @@
 ## Imagine.js
 
-<img src="public/logo.png" alt="Imagine.js — AI image generation library for Node.js" class="logo" />
+<img src="public/logo.png" alt="Imagine.js — AI image generation library for Node.js" class="logo" style="max-width: 450px" />
 
 <div class="badges" style="text-align: center;">
 <a href="https://github.com/themaximal1st/imagine.js"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/themaximal1st/imagine.js"></a>
