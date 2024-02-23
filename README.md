@@ -1,8 +1,8 @@
 ## Imagine.js
 
-<img src="public/logo.png" alt="Imagine.js — AI image generation library for Node.js" class="logo" style="max-width: 450px" />
+<img src="public/logo.png" alt="Imagine.js — AI image generation library for Node.js" class="logo" style="max-width: 330px; margin-left: 30px;" />
 
-<div class="badges" style="text-align: center;">
+<div class="badges" style="text-align: center; margin-top: -20px;">
 <a href="https://github.com/themaximal1st/imagine.js"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/themaximal1st/imagine.js"></a>
 <a href="https://www.npmjs.com/package/@themaximalist/imagine.js"><img alt="NPM Downloads" src="https://img.shields.io/npm/dt/%40themaximalist%2Fimagine.js"></a>
 <a href="https://github.com/themaximal1st/imagine.js"><img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/themaximal1st/imagine.js"></a>
