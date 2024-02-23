@@ -97,7 +97,7 @@ const buffer = await Imagine(prompt);
 fs.writeFileSync("rose.png", buffer);
 ```
 
-You can run this over and over and iterate with the LLM and Image Model towards a better and better result. Check out [Images Bot](https://imagesbot.com) for a real-world example of this (it's open source).
+You can run this over and over and iterate with the LLM and Image Model towards a better and better result. Check out [AI.js](https://aijs.themaximalist.com) and [Images Bot](https://imagesbot.com) for a real-world examples of this.
 
 ## API
 
