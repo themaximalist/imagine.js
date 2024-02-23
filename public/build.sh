@@ -4,6 +4,6 @@ NAME="imagine.js"
 DOMAIN="imaginejs.themaximalist.com"
 TITLE="Imagine.js — AI Image Generator Library for Node.js"
 DESCRIPTION="A simple AI image generator library compatible with Automatic1111, Replicate and Stability."
-CLASSES="gap-md"
+CLASSES="gap-md-1"
 
 readme-to-index "$NAME" "$DOMAIN" "$TITLE" "$DESCRIPTION" "$CLASSES"
