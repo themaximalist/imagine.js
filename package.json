@@ -1,6 +1,6 @@
 {
     "name": "@themaximalist/imagine.js",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "Simple AI Image Generation",
     "main": "src/index.js",
     "homepage": "https://imaginejs.themaximalist.com",
@@ -10,7 +10,7 @@
     },
     "type": "module",
     "scripts": {
-        "test": "mocha"
+        "test": "dotenv-extended mocha"
     },
     "keywords": [
         "ai",
@@ -21,6 +21,7 @@
     "author": "The Maximalist",
     "license": "MIT",
     "devDependencies": {
+        "dotenv-extended": "^2.9.0",
         "mocha": "^10.2.0"
     },
     "dependencies": {

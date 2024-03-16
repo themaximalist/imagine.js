@@ -1,11 +1,12 @@
+
 import assert from "assert";
 import Imagine from "../src/index.js";
 
 // import fs from "fs";
 
 describe("imagine", function () {
-    this.timeout(10000);
-    this.slow(5000);
+    this.timeout(30000);
+    this.slow(15000);
 
     it("replicate", async function () {
         const buffer = await Imagine("a butterfly", { service: Imagine.REPLICATE });
@@ -22,9 +23,6 @@ describe("imagine", function () {
     });
 
     it("a1111", async function () {
-        this.timeout(30000);
-        this.slow(15000);
-
         const buffer = await Imagine("a red rose", { service: Imagine.A1111 });
         assert(buffer instanceof Buffer);
         assert(buffer.length > 0);
