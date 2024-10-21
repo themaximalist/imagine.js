@@ -1,6 +1,6 @@
 {
     "name": "@themaximalist/imagine.js",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "Simple AI Image Generation",
     "main": "src/index.js",
     "homepage": "https://imaginejs.themaximalist.com",
@@ -26,6 +26,6 @@
     },
     "dependencies": {
         "node-fetch": "^3.3.2",
-        "replicate": "^0.25.2"
+        "replicate": "^1.0.1"
     }
 }

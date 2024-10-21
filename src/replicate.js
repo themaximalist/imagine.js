@@ -4,7 +4,7 @@ const log = debug("imagine.js:replicate");
 import Client from "replicate";
 import fetch from "node-fetch";
 
-const MODEL = "lucataco/playground-v2.5-1024px-aesthetic:a45f82a1382bed5c7aeb861dac7c7d191b0fdf74d8d57c4a0e6ed7d4d0bf7d24";
+const MODEL = "black-forest-labs/flux-schnell";
 
 let replicate = null;
 export default async function Replicate(prompt_text, options = {}) {
@@ -13,13 +13,13 @@ export default async function Replicate(prompt_text, options = {}) {
     if (!options.model) options.model = MODEL;
     if (!options.width) options.width = 1024;
     if (!options.height) options.height = 1024;
-    if (!options.scheduler) options.scheduler = "DPMSolver++";
+    // if (!options.scheduler) options.scheduler = "DPMSolver++";
     if (!options.num_outputs) options.num_outputs = 1;
 
-    if (!options.guidance_scale) options.guidance_scale = 3;
-    if (!options.apply_watermark) options.apply_watermark = true;
-    if (!options.prompt_strength) options.prompt_strength = 0.8;
-    if (!options.num_inference_steps) options.num_inference_steps = 25;
+    // if (!options.guidance_scale) options.guidance_scale = 3;
+    // if (!options.apply_watermark) options.apply_watermark = true;
+    // if (!options.prompt_strength) options.prompt_strength = 0.8;
+    // if (!options.num_inference_steps) options.num_inference_steps = 25;
 
     options.prompt = prompt_text;
 

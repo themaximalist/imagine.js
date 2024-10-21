@@ -4,7 +4,7 @@ const log = debug("imagine.js:stability");
 import fetch from "node-fetch";
 
 const BASE_URL = "https://api.stability.ai";
-const MODEL = "stable-diffusion-xl-beta-v2-2-2";
+const MODEL = "stable-diffusion-xl-1024-v1-0";
 
 export default async function Stability(prompt_text, options = null) {
     if (!process.env.STABILITY_API_KEY) throw new Error("STABILITY_API_KEY is not set.");
@@ -12,13 +12,13 @@ export default async function Stability(prompt_text, options = null) {
     if (!options.model) options.model = MODEL;
 
     let stability = options.stability || {};
-    if (!stability.cfg_scale) stability.cfg_scale = 7; // 0-35
-    if (!stability.clip_guidance_preset) stability.clip_guidance_preset = 'FAST_BLUE'; // FAST_BLUE FAST_GREEN NONE SIMPLE SLOW SLOWER SLOWEST
-    if (!stability.height) stability.height = 512;
-    if (!stability.width) stability.width = 512;
-    if (!stability.samples) stability.samples = 1;
-    if (!stability.sampler) stability.sampler = "K_EULER"; // DDIM DDPM K_DPMPP_2M K_DPMPP_2S_ANCESTRAL K_DPM_2 K_DPM_2_ANCESTRAL K_EULER K_EULER_ANCESTRAL K_HEUN K_LMS
-    if (!stability.steps) stability.steps = 50; // 10-150
+    // if (!stability.cfg_scale) stability.cfg_scale = 7; // 0-35
+    // if (!stability.clip_guidance_preset) stability.clip_guidance_preset = 'FAST_BLUE'; // FAST_BLUE FAST_GREEN NONE SIMPLE SLOW SLOWER SLOWEST
+    if (!stability.height) stability.height = 1024;
+    if (!stability.width) stability.width = 1024;
+    // if (!stability.samples) stability.samples = 1;
+    // if (!stability.sampler) stability.sampler = "K_EULER"; // DDIM DDPM K_DPMPP_2M K_DPMPP_2S_ANCESTRAL K_DPM_2 K_DPM_2_ANCESTRAL K_EULER K_EULER_ANCESTRAL K_HEUN K_LMS
+    // if (!stability.steps) stability.steps = 50; // 10-150
     stability.text_prompts = [{ text: prompt_text }];
 
     try {
