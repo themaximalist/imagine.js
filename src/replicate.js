@@ -6,6 +6,7 @@ import fetch from "node-fetch";
 
 const MODEL = "black-forest-labs/flux-schnell";
 
+
 let replicate = null;
 export default async function Replicate(prompt_text, options = {}) {
     if (!replicate) { replicate = new Client({ auth: process.env.REPLICATE_API_KEY, fetch }); }
@@ -32,15 +33,21 @@ export default async function Replicate(prompt_text, options = {}) {
 
         if (typeof options.seed !== "undefined") input.seed = options.seed;
 
-        const output = await replicate.run(model, { input });
+        const [output] = await replicate.run(model, { input });
 
-        const remote_image_url = output[0];
-        log(`generated replicate image url ${remote_image_url}`);
+        const dataUrl = output.url();
 
-        const response = await fetch(remote_image_url);
-        return await response.buffer();
+        const base64Data = dataUrl.href.split(',')[1];
+        
+        const buffer = Buffer.from(base64Data, 'base64');
+
+        log(`generated replicate image, size: ${buffer.length} bytes`);
+        return buffer;
     } catch (e) {
         log(`error running replicate generate: ${e}`);
         return null;
     }
 }
+
+
+
