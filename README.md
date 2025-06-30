@@ -152,7 +152,11 @@ View debug logs by setting the `DEBUG` environment variable.
 
 -   [AI.js](https://aijs.themaximalist.com) — simple AI library
 -   [Infinity Arcade](https://infinityarcade.com) — play any text adventure game
--   [Images Bot](https://imagesbot.com) — image explorer
+-   [News Score](https://newsscore.com) — score and sort the news
+-   [AI Image Explorer](https://aiimageexplorer.com) — image explorer
+-   [Think Machine](https://thinkmachine.com) — AI research assistant
+-   [Thinkable Type](https://thinkabletype.com) — Information Architecture Language
+-   [Minds App](https://mindsapp.com) — AI chat in your menubar
 
 ## License
 
